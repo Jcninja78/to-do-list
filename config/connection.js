@@ -5,11 +5,11 @@ const connection = mysql.createConnection({
     port: 3306,
     user: "root",
     password: "DS45irL6l7",
-    database: "toDoList_db"
+    database: "todolist_db"
 });
 
 connection.connect((err) => {
-    if (er) {
+    if (err) {
         throw err;
     }
 
