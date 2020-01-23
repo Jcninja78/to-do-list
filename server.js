@@ -1,6 +1,31 @@
 const express = require ("express");
 
-const orm = require("./config/orm");
+const item = require("./models/todolist");
+
+// **LINE IN CODE BELOW IS FOR TESTING**
+
+// item.list((result) => {
+//     console.log(result);
+// });
+
+// item.create({
+//     name: "todolist item",
+//     completed: false},
+// (result) => {
+//     console.log(result);
+// });
+
+// item.update({
+//     name: "changed todolist item",
+//     completed: false},
+// 7,
+// (result) => {
+//     console.log(result);
+// });
+
+// item.delete(7, (result) => {
+//     console.log(result);
+// });
 
 // orm.selectAll("items", (result) => {
 //     console.log(result);
@@ -13,9 +38,11 @@ const orm = require("./config/orm");
 //     console.log(result);
 // });
 
-orm.updateOne("items", {
-    name: "New Name",
-    completed: true
-}, (result) => {
-    console.log(result);
-});
+// orm.updateOne("items", {
+//     name: "New Name",
+//     completed: true
+// }, 
+// 4, 
+// (result) => {
+//     console.log(result);
+// });
