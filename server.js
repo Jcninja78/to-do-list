@@ -2,6 +2,23 @@ const express = require ("express");
 
 const item = require("./models/todolist");
 
+const app = express();
+
+const PORT = process.env.PORT || 8080;
+
+const routes = require("./controllers/items_controller");
+
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({defaultLayout: "main"}));
+app.set("view engine", "handlebars");
+
+app.use(routes);
+
+app.listen(PORT, () => {
+    console.log(`Listening on port ${PORT}`)
+});
+
 // **LINE IN CODE BELOW IS FOR TESTING**
 
 // item.list((result) => {
