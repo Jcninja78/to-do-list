@@ -15,6 +15,15 @@ router.get("/", (req, res) => {
     });
 });
 
+router.post("/item/create", (req, res) => {
+    const item_name = req.body.name;
+    item.create({
+        name: item_name,
+        completed: false
+    }, (result) => {
+        res.redirect("/")
+    });
+});
 // get all of the items, and display them on the page
 
 // create a new item
